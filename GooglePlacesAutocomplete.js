@@ -595,24 +595,6 @@ export default class GooglePlacesAutocomplete extends Component {
 
   _onFocus = () => this.setState({ listViewDisplayed: true })
 
-  _renderPoweredLogo = () => {
-    if (!this._shouldShowPoweredLogo()) {
-      return null
-    }
-
-    return (
-      <View
-        style={[this.props.suppressDefaultStyles ? {} : defaultStyles.row, defaultStyles.poweredContainer, this.props.styles.poweredContainer]}
-      >
-        <Image
-          style={[this.props.suppressDefaultStyles ? {} : defaultStyles.powered, this.props.styles.powered]}
-          resizeMode={Image.resizeMode.contain}
-          source={require('./images/powered_by_google_on_white.png')}
-        />
-      </View>
-    );
-  }
-
   _shouldShowPoweredLogo = () => {
     if (!this.props.enablePoweredByContainer || this.state.dataSource.length == 0) {
       return false
@@ -655,7 +637,6 @@ export default class GooglePlacesAutocomplete extends Component {
           extraData={[this.state.dataSource, this.props]}
           ItemSeparatorComponent={this._renderSeparator}
           renderItem={({ item }) => this._renderRow(item)}
-          ListFooterComponent={this._renderPoweredLogo}
           {...this.props}
         />
       );
