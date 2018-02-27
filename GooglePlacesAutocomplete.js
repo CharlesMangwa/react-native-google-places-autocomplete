@@ -664,7 +664,7 @@ export default class GooglePlacesAutocomplete extends Component {
               returnKeyType={this.props.returnKeyType}
               autoFocus={this.props.autoFocus}
               style={[this.props.suppressDefaultStyles ? {} : defaultStyles.textInput, this.props.styles.textInput]}
-              value={this.state.text || ""}
+              value={typeof (this.state.text) === "string" ? this.state.text : ""}
               placeholder={this.props.placeholder}
 
               placeholderTextColor={this.props.placeholderTextColor}
