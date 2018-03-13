@@ -631,7 +631,7 @@ export default class GooglePlacesAutocomplete extends Component {
     if ((this.state.text !== '' || this.props.predefinedPlaces.length || this.props.currentLocation === true) && this.state.listViewDisplayed === true) {
       return (
         <FlatList
-          ListHeaderComponent={this.props.header}
+          ListHeaderComponent={!this._results.length && this.props.header}
           style={[this.props.suppressDefaultStyles ? {} : defaultStyles.listView, this.props.styles.listView]}
           data={this.state.dataSource}
           keyExtractor={keyGenerator}
