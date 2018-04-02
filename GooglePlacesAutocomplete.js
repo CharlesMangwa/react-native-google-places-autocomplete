@@ -672,6 +672,7 @@ export default class GooglePlacesAutocomplete extends Component {
               onFocus={onFocus ? () => {this._onFocus(); onFocus()} : this._onFocus}
               clearButtonMode="while-editing"
               underlineColorAndroid={this.props.underlineColorAndroid}
+              selectionColor={this.props.selectionColor}
               { ...userProps }
               onChangeText={this._handleChangeText}
             />
@@ -704,6 +705,7 @@ GooglePlacesAutocomplete.propTypes = {
   GoogleReverseGeocodingQuery: PropTypes.object,
   GooglePlacesSearchQuery: PropTypes.object,
   styles: PropTypes.object,
+  selectionColor: PropTypes.string,
   textInputProps: PropTypes.object,
   enablePoweredByContainer: PropTypes.bool,
   predefinedPlaces: PropTypes.array,
